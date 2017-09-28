@@ -20,7 +20,7 @@ This repo contains files created for an intorductory lecture on [Jekyll](https:/
 ## Subjects not covered in lecture
 
 * **[data files](https://jekyllrb.com/docs/datafiles/)** - too specific ... this is tips & tricks kind of a subject
-* **[collections](https://jekyllrb.com/docs/collections/)** - too specific (similar to **_data**, with the difference that records are split into files + we can use front matter)
+* **[collections](https://jekyllrb.com/docs/collections/)** - too advanced subject for an intorductory course
 * **[links to pages](https://jekyllrb.com/docs/templates/#link)** - usefull, but we can get away without it - more of a tips & tricks kind of subject
 * **[include params & variables](https://jekyllrb.com/docs/includes/#passing-parameters-to-includes)** - too advanced subject for an intorductory course
 
