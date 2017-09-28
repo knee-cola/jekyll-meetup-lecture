@@ -9,6 +9,9 @@ This repo contains files created for an intorductory lecture on [Jekyll](https:/
 * **_layout** - how make the source DRY 
 * **[_include](https://jekyllrb.com/docs/includes/)** - how to insert content of other files
 * **_posts** - how the posts work
+    * **[paginator](https://jekyllrb.com/docs/pagination/)** - unavoidable subject when working with posts
+        * a plugin which based on a given template automatically generates multiple pages, containing paginated posts
+
 * **Liquid loops & filters** - how to generate a menu
     * **[liquid templates](https://jekyllrb.com/docs/templates/)** - applying filters to transform data
 * **site.related_posts** - showing related posts (last few)
@@ -25,5 +28,9 @@ This repo contains files created for an intorductory lecture on [Jekyll](https:/
 * **[include params & variables](https://jekyllrb.com/docs/includes/#passing-parameters-to-includes)** - too advanced subject for an intorductory course
 
 ## Subjects to be researched
-* **[paginator](https://jekyllrb.com/docs/pagination/)** - is used when we want to show multiple posts on a same page
-* **[navigation](https://jekyllrb.com/tutorials/navigation/)** - describes how to implement an effective navigation
+* **tutorials page**
+  * [navigation](https://jekyllrb.com/tutorials/navigation/) - describes how to implement an effective navigation
+* **docs page**
+  * [plugins](https://jekyllrb.com/docs/plugins/)
+  * [themes](https://jekyllrb.com/docs/themes/)
+  * [extras](https://jekyllrb.com/docs/extras/)
