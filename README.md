@@ -2,6 +2,12 @@
 
 This repo contains files created for an introductory lecture on [Jekyll](https://jekyllrb.com). The lecture is to be held in a [Frontend Zagreb Meetup](https://www.meetup.com/en-AU/FrontendZG/).
 
+# Project structure
+
+ * `1-simple-site` - demonstration of manual website build process
+ * `2-using-themes` - how to use Jekyl themes
+ * `3-github-pages` - how to create a guthub page
+
 # Subjects
 
 ## Subjects covered by lecture
