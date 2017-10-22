@@ -1,0 +1,62 @@
+---
+---
+
+html {
+    color:#00FF00;
+    background: url(assets/star-background.jpg);
+    font-family: cursive;
+}
+
+body {
+    background: rgba(0,0,0,.5);
+    padding: 0 25%;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 3em;
+    color: blue;
+    text-shadow: .05em .05em red;
+    background: url(/assets/fire.gif) no-repeat bottom center;
+    background-size: contain;
+    line-height: 3em;
+}
+h2 {
+    color: white;
+}
+p {
+    font-size: 1.2em;
+}
+
+a {
+    color: cyan;
+}
+
+header {
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+}
+header a {
+    background: blue;
+    color: white;
+    display: inline-block;
+    width: 7em;
+    text-align: center;
+    border: 1px solid red;
+    margin: 1em 0;
+    padding: .3em;
+}
+
+$menu-border-radius: .5em;
+
+header a:first-child {
+    border-top-left-radius: $menu-border-radius;
+    border-bottom-left-radius: $menu-border-radius;
+}
+
+header a:last-child {
+    border-top-right-radius: $menu-border-radius;
+    border-bottom-right-radius: $menu-border-radius;
+}
