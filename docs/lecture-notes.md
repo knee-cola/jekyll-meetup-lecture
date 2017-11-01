@@ -29,7 +29,7 @@ This command will do the following:
 
 ## Installing a new theme
 
-In this step we will install a theme called `jekyll-theme-basic-basic` (from [Ruby Gems](https://rubygems.org/gems/jekyll-theme-basically-basic)).
+In this step we will install a theme called `jekyll-theme-basically-basic` (from [Ruby Gems](https://rubygems.org/gems/jekyll-theme-basically-basic)).
 
 A theme is installed like so:
 
