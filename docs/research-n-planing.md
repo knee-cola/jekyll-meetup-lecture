@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Research & Planning
+permalink: research-n-planing
 ---
 
 # Subjects covered in lecture

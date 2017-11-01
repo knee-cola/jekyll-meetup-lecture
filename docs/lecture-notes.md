@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Lecture notes
+permalink: lecture-notes
 ---
 
 # Project structure
