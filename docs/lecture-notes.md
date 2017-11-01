@@ -2,6 +2,13 @@
 layout: default
 title: Lecture notes
 ---
+
+# Project structure
+
+ * `1-simple-site` - demonstration of manual website build process
+ * `2-using-themes` - how to use Jekyl themes
+ * `docs` - how to create a GitHub page
+
 # Using themes
 
 In this demo we'll first create a new website based on the default Jekyll theme called **Minima**. Then we'll install another teme and do a theme switch. 
