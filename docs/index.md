@@ -14,6 +14,6 @@ This repo contains files created for an introductory lecture on [Jekyll](https:/
 
 # Also see
 
-* [research-planing.html](./research-planing.html) - notes made
-* [lecture-notes.html](./lecture-notes.html) - notes made
+* [research-planing.html]({{ site.baseurl }}{% link research-planing.html %}) - notes made
+* [lecture-notes.html]({{ site.baseurl }}{% link lecture-notes.html %}) - notes made
 * [presentation @ GoogleDrive](https://docs.google.com/presentation/d/1VvbhxLfLkqFPmGdTo3MNbF7jeXsF8tE_Ri2487OFLBo/edit?usp=sharing) - presentation used in the lecture
