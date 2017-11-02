@@ -1,13 +1,13 @@
 ---
-layout: default
-title: Jekyll Meetup Lecture
+layout: home
+title: Home
 ---
+This is a sample page used for a lecture on Jekyll held at ZG Fronted meetup.
 
-I made this page (and [repository](https://github.com/knee-cola/jekyll-meetup-lecture) ) while preparing a lecture on Jekyll for [Frontend Zagreb Meetup](https://www.meetup.com/en-AU/FrontendZG/).
+The lecture covers the following subjects:
 
-# To find out more ...
+* converting a static site to Jekyll project
+* using themes with Jekyll
+* using Jekyll to create GitHub pages
 
-* [repository](https://github.com/knee-cola/jekyll-meetup-lecture) - actual repto to which this page belongs
-* [Research-n-planing](research-n-planing) - notes made while doing research for the lecture
-* [lecture-notes](lecture-notes) - notes made while rehearsing for the lecture
-* [presentation @ GoogleDrive](https://docs.google.com/presentation/d/1VvbhxLfLkqFPmGdTo3MNbF7jeXsF8tE_Ri2487OFLBo/edit?usp=sharing) - presentation used in the lecture
+To find out more visit the GitHub repo @ <a href="https://github.com/knee-cola/jekyll-meetup-lecture">github.com/knee-cola/jekyll-meetup-lecture</a>
