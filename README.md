@@ -104,7 +104,29 @@ Jekyll processes the HTML from the original content file in the following way:
 
 ### Introduction to posts
 
-**ToDo**
+Creating posts is very similar to creating static pages. There are however a few subtile differences:
+* posts in the header need to have `title` and `date`
+* all posts need to be places within `_posts` directory
+* post files should be named so that they contain their posting date and the post title (i.e. `2017-10-20-exploring-alternatives.md`)
+
+Like pages posts can (should) also use layouts and can (should) be written in *markdown*.
+
+#### Listing posts on the home page
+
+Let's dive directly into an example - we will add the following code snippet to our index page (copied from `_layouts/home.html`):
+```html
+<ul>
+{% for post in site.posts %}
+  <li>
+    <a href="{{post.url}}">{{post.title}}</a>
+  </li>
+{% endfor %}
+</ul>
+```
+The above code uses [Liquid](https://github.com/Shopify/liquid/wiki) `for` loop to iterate over the list of posts, which is provided by Jekyll in `site.posts` array. Each element of the array is converted into a `<li>` element. The end result is an unordered list, which contains links to all of our posts.
+
+#### Scheduling blog posts
+It's important to note that Jekyll takes care of skipping blog posts which are marked with a future date. That way we can schedule our posts to become visible at some point in the future (of course we need to manually build and deploy the new version of the website ... or automate it somehow).
 
 ### Introduction to markdown
 
