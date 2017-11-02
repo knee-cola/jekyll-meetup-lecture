@@ -187,7 +187,7 @@ We have just configured GitHub to look inside a `docs` subfolder for source of o
 
 ### Preparing website files
 
-In this step we'll copy our website files to a new folder called `docs` (that's what we selected in the previous step). Yes - it's as easy as that!
+In this step we'll copy our website files to a new folder called `docs` (that's what we selected in the previous step).
 
 ### Commiting & Pushing changes to GitHub
 
@@ -206,7 +206,27 @@ GitHub pages come with a dozen Jekyll themes ready to be used with our website. 
 
 The new theme will be applied by changing the `_config.yml`, which will be commited automatically.
 
-The resulting GitHub page can be found at [knee-cola.github.io/jekyll-meetup-lecture/](https://knee-cola.github.io/jekyll-meetup-lecture/);
+## Fixing layout
+If we now try to view our page at at [knee-cola.github.io/jekyll-meetup-lecture/](https://knee-cola.github.io/jekyll-meetup-lecture/), we will see that it has no formatting.
+
+If we look deeper into the HTML returned by GitHub we'll see that all the layout HTML (`head` etc...) is missing, as if layout has not been applied.
+
+That is in fact correct! The layout has not been applied because themes available at GitHub use different naming convention for layout files. Instead of having `home.html`, `page.html`,`post.html`, the `_layouts` folder contains only `default.html` layout file.
+
+To fix this we need to edit our `markdown` files changes this:
+```Markdown
+---
+layout: page
+title: About Jekyll
+---
+```
+... into something like this:
+---
+layout: default
+title: About Jekyll
+---
+```
+Now all we need to do is commit our changes, push them to GitHub and enjoy the beuty of our new website - [click here](https://knee-cola.github.io/jekyll-meetup-lecture/) ;)
 
 # Research & Planning
 
