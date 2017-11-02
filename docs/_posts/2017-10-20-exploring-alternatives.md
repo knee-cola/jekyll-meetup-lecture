@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Exploring Alternatives"
 date: 2017-10-20 16:19:00 -0200
 ---

@@ -206,27 +206,16 @@ GitHub pages come with a dozen Jekyll themes ready to be used with our website. 
 
 The new theme will be applied by changing the `_config.yml`, which will be commited automatically.
 
-## Fixing layout
+### Fixing layout
 If we now try to view our page at at [knee-cola.github.io/jekyll-meetup-lecture/](https://knee-cola.github.io/jekyll-meetup-lecture/), we will see that it has no formatting.
 
-If we look deeper into the HTML returned by GitHub we'll see that all the layout HTML (`head` etc...) is missing, as if layout has not been applied.
+Unfortunetly this isn't the only problem. Our GitHub page is also missing a navbar and list of posts.
 
-That is in fact correct! The layout has not been applied because themes available at GitHub use different naming convention for layout files. Instead of having `home.html`, `page.html`,`post.html`, the `_layouts` folder contains only `default.html` layout file.
+This is caused by the fact that themes available at GitHub don't support an automatic navbar or listing of the posts on our home page. If we look at GitHub of one of the themes, we'll see that `_layout` directory contains only `default.html` file. There's no trace of `home.html`, `page.html`,`post.html`, which our page depends on.
 
-To fix this we need to edit our `markdown` files changes this:
-```Markdown
----
-layout: page
-title: About Jekyll
----
-```
-... into something like this:
----
-layout: default
-title: About Jekyll
----
-```
-Now all we need to do is commit our changes, push them to GitHub and enjoy the beuty of our new website - [click here](https://knee-cola.github.io/jekyll-meetup-lecture/) ;)
+This can however easly be fixed. All we need to do is add the missing files to `_layouts` directory inside `docs` dir (**warning:** be carefull not to copy the `default.html` file). Since these layout files all wrapp their content in `default` layout, which is provided by the theme, the generated HTML will be styled by the selected theme.
+
+After adding these files, all we need to do is commit and push, and marvel at the beuty of our [new GutHub page](https://knee-cola.github.io/jekyll-meetup-lecture/)!
 
 # Research & Planning
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: Home
 ---
 This is a sample page used for a lecture on Jekyll held at ZG Fronted meetup.
