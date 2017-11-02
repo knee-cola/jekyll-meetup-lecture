@@ -12,73 +12,21 @@ In this chapter you can find notes I made while preparing for this lecture. The 
 
 One of the problems with static web sites is that they are not DRY (Don't Repeat Yourself). Each HTML page we create must contain `<head>` element, all the navigational HTML, which we want to be visible on each paga a visitor sees. For example our `about.html` file looks like this:
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Jekyll the WP Killer - About Jekyll</title>
-        <link rel="stylesheet" href="/style.css">
-    </head>
-    <body>
-        <header>
-            <h1>About Jekyll</h1>
-        </header>
-        
-        <p>Jekyll is a static site builder, which transform plain text into static websites and blogs.</p>
-        <p>The main benefites of Jekyll over a full-blown CMS are:</p>
-        <ul>
-            <li>simplicity</li>
-            <li>security</li>
-            <li>speed</li>
-        </ul>
-
-        <footer>
-            <strong>Links</strong>
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-        </footer>
-    </body>
-    </html>
-
-Jekyll solves this problem by introducing **layouts**. A **layout** is an HTML file, conaining HTML which is common to all of the subpages (i.e. `<head>`, navigation bar ...). A layout looks something like this:
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Jekyll the WP Killer - {{page.title}}</title>
-        <link rel="stylesheet" href="/style.css">
-    </head>
-    <body>
-        <header>
-            <h1>{{page.title}}</h1>
-        </header>
-        
-        {{ content }}
-
-        <footer>
-            <strong>Links</strong>
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-        </footer>
-    </body>
-    </html>
-
-As we can see it's a plain HTML file with a few strange looking strings surrounded by braces. These are [Liquid](https://github.com/Shopify/liquid/wiki) templating tags, which are replaced by Jekyll with the real contents. In the code above we can see two such tags:
-* `{{page.title}}` - will be replaced by page title
-* `{{ content }}` - will be replaced by page contents
-
-After moving the shared HTML into a layout, all that's left in the `about.html` file is the following:
-
-    ---
-    layout: page
-    title: About Jekyll
-    ---
-
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jekyll the WP Killer - About Jekyll</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>About Jekyll</h1>
+    </header>
+    
     <p>Jekyll is a static site builder, which transform plain text into static websites and blogs.</p>
     <p>The main benefites of Jekyll over a full-blown CMS are:</p>
     <ul>
@@ -87,13 +35,70 @@ After moving the shared HTML into a layout, all that's left in the `about.html` 
         <li>speed</li>
     </ul>
 
+    <footer>
+        <strong>Links</strong>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </footer>
+</body>
+</html>
+```
+
+Jekyll solves this problem by introducing **layouts**. A **layout** is an HTML file, conaining HTML which is common to all of the subpages (i.e. `<head>`, navigation bar ...). A layout looks something like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jekyll the WP Killer - {{page.title}}</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>{{page.title}}</h1>
+    </header>
+    
+    {{ content }}
+
+    <footer>
+        <strong>Links</strong>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </footer>
+</body>
+</html>
+```
+As we can see it's a plain HTML file with a few strange looking strings surrounded by braces. These are [Liquid](https://github.com/Shopify/liquid/wiki) templating tags, which are replaced by Jekyll with the real contents. In the code above we can see two such tags:
+* `{{page.title}}` - will be replaced by page title
+* `{{ content }}` - will be replaced by page contents
+
+After moving the shared HTML into a layout, all that's left in the `about.html` file is the following:
+
+```html
+---
+layout: page
+title: About Jekyll
+---
+
+<p>Jekyll is a static site builder, which transform plain text into static websites and blogs.</p>
+<p>The main benefites of Jekyll over a full-blown CMS are:</p>
+<ul>
+    <li>simplicity</li>
+    <li>security</li>
+    <li>speed</li>
+</ul>
+```
+
 You might have noticed that a special header is added at the begining of the file. This header tells Jekyll which layout needs to be used while bulding the page in question. In addition the header contains the page title.
 
 ### Introduction to posts
 
 **ToDo**
 
-# Introduction to markdown
+### Introduction to markdown
 
 After removing the shared HTML into a layout file, our HTML page has become much slimmer. Now it contains only the HTML which specific for the it's content. This can however be trimmed down even more.
 
@@ -101,6 +106,7 @@ Instead of using nasty HTML, we can write out content more clearly in [markdown]
 
 To use **markdown** we first need to rename our `about.html` to `about.md`, and then change it's content to look something like the following:
 
+```Markdown
     ---
     layout: page
     title: About Jekyll
@@ -112,6 +118,7 @@ To use **markdown** we first need to rename our `about.html` to `about.md`, and 
     * simplicity
     * security
     * speed
+```
 
 ## (2) Using themes
 
@@ -119,13 +126,19 @@ In this demo apply a new theme to our existing website.
 
 ### Removing our theme files
 
+In order to use a GEM-based theme, we first need to remove all files which define the what our website looks like:
+* `_layouts` folder
+* all the CSS/SCSS files
+
 ### Installing a new theme
 
 In this step we will install a theme called `jekyll-theme-basically-basic` (from [Ruby Gems](https://rubygems.org/gems/jekyll-theme-basically-basic)).
 
 A theme is installed like so:
 
-    gem install jekyll-theme-basically-basic
+```bash
+gem install jekyll-theme-basically-basic
+```
 
 ### Applying the theme to our website
 
@@ -133,11 +146,15 @@ To apply a theme to our website we need to create a Jekyll config file `_config.
 
 Inside the file we need to add a single line, which will instruct Jekyll which theme to use:
 
-    theme: jekyll-theme-basically-basic
+```YAML
+theme: jekyll-theme-basically-basic
+```
 
 To see the changes we need to re-build our website:
 
-    jekyll serve
+```bash
+jekyll serve
+```
 
 ### Switching to another theme
 
@@ -149,9 +166,10 @@ In this example we will install the **minima** theme:
 
 After the theme is installed we enable it in the `_config.yml` file:
 
+```YAML
     # theme: jekyll-theme-basically-basic
     theme: minima
-
+```
 ## (3) Creating a GitHub page
 
 In this example we will create a GitHub page for GitHub repository of this project. We will use the page from our previous examples.
@@ -205,7 +223,7 @@ This chapter contains links to pages researched during preparation for this lect
 * [blog migration](https://jekyllrb.com/docs/migrations/) - just a mention that automatic migration is possible  
 * [code highliting](https://jekyllrb.com/docs/templates/#code-snippet-highlighting) - useful for developers
 
-## Subjects **not** covered in lecture
+## Subjects NOT covered in lecture
 * [data files](https://jekyllrb.com/docs/datafiles/) - too specific ... this is tips & tricks kind of a subject
 * [collections](https://jekyllrb.com/docs/collections/) - too advanced subject for an intorductory course
 * [links to pages](https://jekyllrb.com/docs/templates/#link) - usefull, but we can get away without it - more of a tips & tricks kind of subject
