@@ -4,7 +4,7 @@ This repo contains files and notes created for a lecture on [Jekyll](https://jek
 
 # Lecture notes
 
-In this chapter you can find notes I made while preparing for this lecture. The notes not only outline the lecture, but can also be used as an quich introduction guide to Jekyll.
+In this chapter you can find notes I made while preparing for this lecture. The notes not only outline the lecture, but can also be used as an quick introduction guide to Jekyll.
 
 To help you understand how each of the concepts described in this text works, source code is provided for each of the steps of converting a static website to Jekyll powered GitHub page. The source is organized in the following folders:
 * `0-static-website` - starting point - folder contains *old school* static web site, which is to be converted to a Jekyll project
@@ -289,18 +289,18 @@ After all of this is done, all we need to do is commit and push, and marvel at t
 
 This chapter contains links to pages researched during preparation for this lecture
 
-## Sublects covered by the lecture
+## Subjects covered by the lecture
 * _layout - how make the source DRY
-* [_include](https://jekyllrb.com/docs/includes/) - how to insert content of other files
-* _posts - how the posts work
-    * **[paginator](https://jekyllrb.com/docs/pagination/)** - unavoidable subject when working with posts (a plugin which based on a given template automatically generates multiple pages, containing paginated posts)
+* [_posts](https://jekyllrb.com/docs/posts/) - how the posts work
 * [liquid templates](https://jekyllrb.com/docs/templates/) - how to generate a menu & applying filters to transform data
-* site.related_posts - showing related posts (last few)
 * [sass](https://jekyllrb.com/docs/assets/) - using the `_sass` folder for partials
 * [blog migration](https://jekyllrb.com/docs/migrations/) - just a mention that automatic migration is possible  
-* [code highliting](https://jekyllrb.com/docs/templates/#code-snippet-highlighting) - useful for developers
 
 ## Subjects NOT covered in lecture
+* [code highliting](https://jekyllrb.com/docs/templates/#code-snippet-highlighting) - useful for developers ... not enough time
+* [_include](https://jekyllrb.com/docs/includes/) - how to insert content of other files ... not enough time
+* site.related_posts - showing related posts (last few) ... not enough time
+* [paginator](https://jekyllrb.com/docs/pagination/)** - not enough time
 * [data files](https://jekyllrb.com/docs/datafiles/) - too specific ... this is tips & tricks kind of a subject
 * [collections](https://jekyllrb.com/docs/collections/) - too advanced subject for an intorductory course
 * [links to pages](https://jekyllrb.com/docs/templates/#link) - usefull, but we can get away without it - more of a tips & tricks kind of subject
