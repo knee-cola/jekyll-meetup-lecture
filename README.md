@@ -107,17 +107,17 @@ Instead of using nasty HTML, we can write out content more clearly in [markdown]
 To use **markdown** we first need to rename our `about.html` to `about.md`, and then change it's content to look something like the following:
 
 ```Markdown
-    ---
-    layout: page
-    title: About Jekyll
-    ---
+---
+layout: page
+title: About Jekyll
+---
 
-    Jekyll is a static site builder, which transform plain text into static websites and blogs.
-    The main benefites of Jekyll over a full-blown CMS are:
+Jekyll is a static site builder, which transform plain text into static websites and blogs.
+The main benefites of Jekyll over a full-blown CMS are:
 
-    * simplicity
-    * security
-    * speed
+* simplicity
+* security
+* speed
 ```
 
 ## (2) Using themes
@@ -167,8 +167,8 @@ In this example we will install the **minima** theme:
 After the theme is installed we enable it in the `_config.yml` file:
 
 ```YAML
-    # theme: jekyll-theme-basically-basic
-    theme: minima
+# theme: jekyll-theme-basically-basic
+theme: minima
 ```
 ## (3) Creating a GitHub page
 
