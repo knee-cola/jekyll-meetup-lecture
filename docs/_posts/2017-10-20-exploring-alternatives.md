@@ -1,7 +1,7 @@
 ---
+layout: default
 title: "Exploring Alternatives"
 date: 2017-10-20 16:19:00 -0200
-layout: post
 ---
 
 Changing things up a bit this time - because of All Saints' Day we are holding the meetup on the second Wednesday of November. Our speakers will be introducing some lesser known web development tools and their advantages over the the ones you use.

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: About Jekyll
 ---
 Jekyll is a static site builder, which transform plain text into static websites and blogs.
