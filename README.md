@@ -4,7 +4,13 @@ This repo contains files and notes created for a lecture on [Jekyll](https://jek
 
 # Lecture notes
 
-In this chapter you can find notes I made while preparing for this lecture. The notes not only outline the lecture, but can also be used as an introductory guide to Jekyll.
+In this chapter you can find notes I made while preparing for this lecture. The notes not only outline the lecture, but can also be used as an quich introduction guide to Jekyll.
+
+To help you understand how each of the concepts described in this text works, source code is provided for each of the steps of converting a static website to Jekyll powered GitHub page. The source is organized in the following folders:
+* `0-static-website` - starting point - folder contains *old school* static web site, which is to be converted to a Jekyll project
+* `1-jekyll-website` - Jekyll powered web site - this is the result of converting the static site into a Jekyll powered project
+* `2-using-themes` - website using GEM-based themes - a modified version of our previous Jekyll project
+* `docs` - GitHub ready website - yet another version of our original website - this time ready to be posted on GitHub pages
 
 ## (1) Converting static site 2 Jekyll project
 
