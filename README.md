@@ -206,16 +206,47 @@ GitHub pages come with a dozen Jekyll themes ready to be used with our website. 
 
 The new theme will be applied by changing the `_config.yml`, which will be commited automatically.
 
-### Fixing layout
+### Fixing Layout
 If we now try to view our page at at [knee-cola.github.io/jekyll-meetup-lecture/](https://knee-cola.github.io/jekyll-meetup-lecture/), we will see that it has no formatting.
 
 Unfortunetly this isn't the only problem. Our GitHub page is also missing a navbar and list of posts.
 
 This is caused by the fact that themes available at GitHub don't support an automatic navbar or listing of the posts on our home page. If we look at GitHub of one of the themes, we'll see that `_layout` directory contains only `default.html` file. There's no trace of `home.html`, `page.html`,`post.html`, which our page depends on.
 
+#### Extending the theme
+
 This can however easly be fixed. All we need to do is add the missing files to `_layouts` directory inside `docs` dir (**warning:** be carefull not to copy the `default.html` file). Since these layout files all wrapp their content in `default` layout, which is provided by the theme, the generated HTML will be styled by the selected theme.
 
-After adding these files, all we need to do is commit and push, and marvel at the beuty of our [new GutHub page](https://knee-cola.github.io/jekyll-meetup-lecture/)!
+In a way by adding our own layout files, which use the `default.html` defined by the theme, we are extending the functionality of the underlying theme. The layout files we have added just add one feature to the generated HTML, while they leave styling to the theme.
+
+#### Fixing the navbar
+
+We are not done yet with fixing our theme. The problem which still hasen't been solved is the missing navbar. The was added to HTML by the `default` layout we defined. Since we can't copy that file to the `_layouts` folder, we have to do a workaround. Here's how we'll do it:
+
+We create a new `main.html` file inside the `/docs/_layouts/` directory, and paste the folowing content inside it:
+```html
+---
+layout: default
+---
+{{content}}
+<footer>
+    <strong>Links</strong>
+    <a href="{{side.baseurl}}">Home</a>
+    <a href="{{side.baseurl}}about.html">About</a>
+</footer>
+```
+We have just created a layout which adds a navbar to the content, and then passes the partially generated HTML to be wrapped by theme's `default` layout.
+
+Next we have to edit the rest of the theme files (`home.html`, `page.html`,`post.html`) and make them use the new `main` layout instead of `default`.
+
+The end result will be that the page content is processed in the following sequence (example for the `index.md` page):
+
+* markdown is first conveted to HTML
+* `home` layout then takes over and extends the HTML with the list of blog posts by 
+* HTML is then passed to the `main` layout, which adds navbar
+* in the last step `default` layout provided adds `<head>` and styles the output HTML
+
+After all of this is done, all we need to do is commit and push, and marvel at the beuty of our [new GutHub page](https://knee-cola.github.io/jekyll-meetup-lecture/)!
 
 # Research & Planning
 
