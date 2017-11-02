@@ -8,7 +8,7 @@ In this chapter you can find notes I made while preparing for this lecture. The 
 
 ## (1) Converting static site 2 Jekyll project
 
-### Introduction to layout
+### Introduction to layouts
 
 One of the problems with static web sites is that they are not DRY (Don't Repeat Yourself). Each HTML page we create must contain `<head>` element, all the navigational HTML, which we want to be visible on each paga a visitor sees. For example our `about.html` file looks like this:
 
@@ -93,6 +93,14 @@ title: About Jekyll
 ```
 
 You might have noticed that a special header is added at the begining of the file. This header tells Jekyll which layout needs to be used while bulding the page in question. In addition the header contains the page title.
+
+#### Layouts: how is the HTML generated
+
+Jekyll processes the HTML from the original content file in the following way:
+
+* HTML is taken from the original content file (i.e. `about.html`)
+* the layout takes over and wrapps the original HTML into `body`, adds `head`, `navbar` etc
+* HTML is saved to the destination file in the `_site` folder
 
 ### Introduction to posts
 
@@ -241,10 +249,11 @@ Next we have to edit the rest of the theme files (`home.html`, `page.html`,`post
 
 The end result will be that the page content is processed in the following sequence (example for the `index.md` page):
 
-* markdown is first conveted to HTML
-* `home` layout then takes over and extends the HTML with the list of blog posts by 
+* markdown from `index.md` is first conveted to HTML
+* `home` layout then takes over and extends the HTML with the list of blog posts
 * HTML is then passed to the `main` layout, which adds navbar
-* in the last step `default` layout provided adds `<head>` and styles the output HTML
+* in the last step `default` layout (provided by the theme) adds `<head>` and styles the output HTML
+* HMTL is saved to the `index.html` file
 
 After all of this is done, all we need to do is commit and push, and marvel at the beuty of our [new GutHub page](https://knee-cola.github.io/jekyll-meetup-lecture/)!
 
