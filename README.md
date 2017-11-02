@@ -288,7 +288,7 @@ The end result will be that the page content is processed in the following seque
 * in the last step `default` layout (provided by the theme) adds `<head>` and styles the output HTML
 * HMTL is saved to the `index.html` file
 
-After all of this is done, all we need to do is commit and push, and marvel at the beuty of our [new GutHub page](https://knee-cola.github.io/jekyll-meetup-lecture/)!
+After all of this is done, all we need to do is commit and push, and marvel at the beuty of our [new GitHub page](https://knee-cola.github.io/jekyll-meetup-lecture/)!
 
 # Research & Planning
 
