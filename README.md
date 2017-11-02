@@ -108,6 +108,28 @@ Jekyll processes the HTML from the original content file in the following way:
 * the layout takes over and wrapps the original HTML into `body`, adds `head`, `navbar` etc
 * HTML is saved to the destination file in the `_site` folder
 
+### Introduction to markdown
+
+After removing the shared HTML into a layout file, our HTML page has become much slimmer. Now it contains only the HTML which specific for the it's content. This can however be trimmed down even more.
+
+Instead of using nasty HTML, we can write out content more clearly in [markdown](https://daringfireball.net/projects/markdown/). [Markdown](https://daringfireball.net/projects/markdown/) is a special language, which is used to write GitHub README pages, and which Jekyll transpiles into plain HTML.
+
+To use **markdown** we first need to rename our `about.html` to `about.md`, and then change it's content to look something like the following:
+
+```Markdown
+---
+layout: page
+title: About Jekyll
+---
+
+Jekyll is a static site builder, which transform plain text into static websites and blogs.
+The main benefites of Jekyll over a full-blown CMS are:
+
+* simplicity
+* security
+* speed
+```
+
 ### Introduction to posts
 
 Creating posts is very similar to creating static pages. There are however a few subtile differences:
@@ -133,28 +155,6 @@ The above code uses [Liquid](https://github.com/Shopify/liquid/wiki) `for` loop 
 
 #### Scheduling blog posts
 It's important to note that Jekyll takes care of skipping blog posts which are marked with a future date. That way we can schedule our posts to become visible at some point in the future (of course we need to manually build and deploy the new version of the website ... or automate it somehow).
-
-### Introduction to markdown
-
-After removing the shared HTML into a layout file, our HTML page has become much slimmer. Now it contains only the HTML which specific for the it's content. This can however be trimmed down even more.
-
-Instead of using nasty HTML, we can write out content more clearly in [markdown](https://daringfireball.net/projects/markdown/). [Markdown](https://daringfireball.net/projects/markdown/) is a special language, which is used to write GitHub README pages, and which Jekyll transpiles into plain HTML.
-
-To use **markdown** we first need to rename our `about.html` to `about.md`, and then change it's content to look something like the following:
-
-```Markdown
----
-layout: page
-title: About Jekyll
----
-
-Jekyll is a static site builder, which transform plain text into static websites and blogs.
-The main benefites of Jekyll over a full-blown CMS are:
-
-* simplicity
-* security
-* speed
-```
 
 ## (2) Using themes
 
