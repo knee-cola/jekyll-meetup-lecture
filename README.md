@@ -17,6 +17,8 @@ To help you understand how each of the concepts described in this text works, so
 * `2-using-themes` - website using GEM-based themes - a modified version of our previous Jekyll project
 * `docs` - GitHub ready website - yet another version of our original website - this time ready to be posted on GitHub pages
 
+You might want to have a look at presentation used in the lecture: [Jekyll the WP Killer - ZG Frontman Meetup](https://goo.gl/ZrcyXU)
+
 ## (1) Converting static site 2 Jekyll project
 
 ### Introduction to layouts
@@ -105,19 +107,19 @@ title: About Jekyll
 
 You might have noticed that a special header is added at the begining of the file. This header tells Jekyll which layout needs to be used while bulding the page in question. In addition the header contains the page title.
 
-#### Layouts: how is the HTML generated
+#### Jekyll processing pipeline
 
 Jekyll processes the HTML from the original content file in the following way:
 
 * HTML is taken from the original content file (i.e. `about.html`)
-* the layout takes over and wrapps the original HTML into `body`, adds `head`, `navbar` etc
-* HTML is saved to the destination file in the `_site` folder
+* the original HTML is then injected into layout, which adds `head`, `navbar` and other shared page elements
+* the resulting HTML is saved to the destination file in the `_site` folder (i.e. `_site/about.html`)
 
 ### Introduction to markdown
 
-After removing the shared HTML into a layout file, our HTML page has become much slimmer. Now it contains only the HTML which specific for the it's content. This can however be trimmed down even more.
+After moving the common HTML into a layout file, our HTML page has become much slimmer. Now it contains only the HTML which specific for the that page. This can however be trimmed down even more.
 
-Instead of using nasty HTML, we can write out content more clearly in [markdown](https://daringfireball.net/projects/markdown/). [Markdown](https://daringfireball.net/projects/markdown/) is a special language, which is used to write GitHub README pages, and which Jekyll transpiles into plain HTML.
+Instead of using *nasty HTML*, we can write out content more clearly in [markdown](https://daringfireball.net/projects/markdown/). [Markdown](https://daringfireball.net/projects/markdown/) is a special language, which is used to write GitHub README pages, and which Jekyll transpiles into plain HTML.
 
 To use **markdown** we first need to rename our `about.html` to `about.md`, and then change it's content to look something like the following:
 
@@ -135,6 +137,16 @@ The main benefites of Jekyll over a full-blown CMS are:
 * speed
 ```
 
+Using markdown has many benefits:
+
+* resulting text is much readable
+* we don't have to worry about closing HTML tags (and making mistakes)
+* we acheve total separation of content (what we want to say) from presentation (what it should look like)
+
+Separating content from presentation makes applying different themes to our website easier, since we're sure that our content can not contain any special CSS classes or inline styling.
+
+**Note:** don't tell anyone, but in case of extreme emergency we can still use HTML tags inside a markdown file.
+
 ### Introduction to posts
 
 Creating posts is very similar to creating static pages. There are however a few subtile differences:
@@ -146,7 +158,7 @@ Like pages posts can (should) also use layouts and can (should) be written in *m
 
 #### Listing posts on the home page
 
-Let's dive directly into an example - we will add the following code snippet to our index page (copied from `_layouts/home.html`):
+Instead of an introduction, we'll dive directly into code. The following code snippet adds a list of all blog posts to our index page (copied from `_layouts/home.html`):
 ```html
 <ul>
 {% for post in site.posts %}
@@ -156,10 +168,12 @@ Let's dive directly into an example - we will add the following code snippet to 
 {% endfor %}
 </ul>
 ```
-The above code uses [Liquid](https://github.com/Shopify/liquid/wiki) `for` loop to iterate over the list of posts, which is provided by Jekyll in `site.posts` array. Each element of the array is converted into a `<li>` element. The end result is an unordered list, which contains links to all of our posts.
+Let's now see how it works. We start off by an `<ul>` block, which contains some strange code `{% for post in site.posts %}`. This code is  [Liquid](https://github.com/Shopify/liquid/wiki) `for` loop, which iterates over the list of posts. The list of posts is provided by Jekyll in `site.posts` array. Inside the `for` loop each item of the array is converted into a `<li>` element. The end result is an unordered list, which contains links to all of our posts.
+
+**Note:** of course the number of posts listed on index page can be limited - this however goes beyond the scope of this lecture - to find out more [click here](https://github.com/shopify/liquid/wiki/Liquid-for-Designers#optional-arguments)
 
 #### Scheduling blog posts
-It's important to note that Jekyll takes care of skipping blog posts which are marked with a future date. That way we can schedule our posts to become visible at some point in the future (of course we need to manually build and deploy the new version of the website ... or automate it somehow).
+It's important to note that Jekyll takes care of skipping blog posts which are marked with a future date. That way we can schedule our posts to become visible at some point in the future (of course we need to manually build and deploy the new version of the website ... or automate it somehow ... `cron`?).
 
 ## (2) Using themes
 
@@ -289,6 +303,10 @@ The end result will be that the page content is processed in the following seque
 * HMTL is saved to the `index.html` file
 
 After all of this is done, all we need to do is commit and push, and marvel at the beuty of our [new GitHub page](https://knee-cola.github.io/jekyll-meetup-lecture/)!
+
+# You need help? Have questions?
+
+If you're starting out with Jekyll, get stuck (as expected) and need some help, don't hesitate to reach me. I'm no Jekyll expert, but am willing to try ;)
 
 # Research & Planning
 
