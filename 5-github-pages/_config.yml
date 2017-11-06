@@ -1,0 +1,4 @@
+theme: jekyll-theme-cayman
+baseurl: /jekyll-meetup-lecture
+title: Jekyll Lecture @ ZG Frontend
+description: sample page for lecture on Jekyll held at ZG Frontend meetup on 2017/11/08
