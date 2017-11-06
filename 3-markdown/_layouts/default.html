@@ -4,21 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Jekyll the WP Killer - About Jekyll</title>
+    <title>Jekyll the WP Killer - {{page.title}}</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <header>
-        <h1>(static) About Jekyll</h1>
+        <h1>(md) {{page.title}}</h1>
     </header>
     
-    <p>Jekyll is a static site builder, which transform plain text into static websites and blogs.</p>
-    <p>The main benefites of Jekyll over a full-blown CMS are:</p>
-    <ul>
-        <li>simplicity</li>
-        <li>security</li>
-        <li>speed</li>
-    </ul>
+    {{ content }}
 
     <footer>
         <strong>Links</strong>
