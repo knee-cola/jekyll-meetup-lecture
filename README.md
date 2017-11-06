@@ -13,9 +13,11 @@ This lecture is organized into three consecutive parts:
 
 To help you understand how each of the concepts described in this text works, source code is provided for each of the steps of converting a static website to Jekyll powered GitHub page. The source is organized in the following folders:
 * `0-static-website` - starting point - folder contains *old school* static web site, which is to be converted to a Jekyll project
-* `1-jekyll-website` - Jekyll powered web site - this is the result of converting the static site into a Jekyll powered project
-* `2-using-themes` - website using GEM-based themes - a modified version of our previous Jekyll project
-* `docs` - GitHub ready website - yet another version of our original website - this time ready to be posted on GitHub pages
+* `1-layouts` - this is the result of using layouts to convert our static site into a Jekyll powered project
+* `2-posts` - adding support for the posts to our website
+* `3-markdown` - converting our pages from HTML to markdown
+* `4-using-themes` - applying other themes to our content
+* `5-github-pages` - preparing out website to be published on GitHub
 
 You might want to have a look at presentation used in the lecture: [Jekyll the WP Killer - ZG Frontman Meetup](https://goo.gl/ZrcyXU)
 
