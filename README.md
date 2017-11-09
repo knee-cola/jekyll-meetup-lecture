@@ -239,7 +239,7 @@ First we need to configure our repository on GitHub pages:
 * access the GitHub page fo your project
 * access the project **settings**
 * locate the **GitHub Pages** section
-* under **Source** select `master brancg/docs folder` and click `Save`
+* under **Source** select `master branch/docs folder` and click `Save`
 
 We have just configured GitHub to look inside a `docs` subfolder for source of our Jekyll website.
 
