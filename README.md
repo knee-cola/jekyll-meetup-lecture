@@ -307,7 +307,7 @@ The end result will be that the page content is processed in the following seque
 
 After all of this is done, all we need to do is commit and push, and marvel at the beuty of our [new GitHub page](https://knee-cola.github.io/jekyll-meetup-lecture/)!
 
-# But that's not all
+# Going beyond basics
 
 If you managed to get this far in this text, it means that you really are interested in Jekyll.
 
@@ -353,6 +353,52 @@ So a data file containg a list of members would look like this:
 {% endfor %}
 </ul>
 ```
+
+### Using Liquid to generate sitemap.xml
+
+
+Although there are great many Jekyll plugins which do all sorts of things, using plugins has a few downsides and should be avoided if possible. Not only a plugin adds a dependency to our project, it also prevents our site to be built by GitHub (in case it's published there).
+
+On good example, in which we can avoid using a plugin, is when we need to generate a `sitemap.xml`. Instead of using [Sitemap.xml Generator plugin](https://github.com/kinnetica/jekyll-plugins), we can generate this file by using Liquid. The following code snippet illustrates how (based on article [*Generating a Sitemap in Jekyll without a Plugin*](http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/) ). To use it just copy the below source into a `sitemap.xml` in you project folder.
+
+```html
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for post in site.posts %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      {% if post.lastmod == null %}
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  {% endfor %}
+  {% for page in site.pages %}
+      <url>
+        <loc>{{ site.url }}{{ page.url }}</loc>
+        {% if page.sitemap != null and page.sitemap != empty %}
+            {% if page.sitemap.lastmod != null and page.sitemap.lastmod != empty %}
+                <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+            {% endif %}
+            {% if page.sitemap.changefreq != null and page.sitemap.changefreq != empty %}
+                <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+            {% else %}
+                <changefreq>monthly</changefreq>
+            {% endif %}
+            {% if page.sitemap.priority != null and page.sitemap.priority != empty %}
+                <priority>{{ page.sitemap.priority }}</priority>
+            {% endif %}
+        {% endif %}
+       </url>
+  {% endfor %}
+</urlset>
+```
+
 
 ### Official documentation
 
