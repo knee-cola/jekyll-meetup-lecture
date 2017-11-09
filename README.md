@@ -2,7 +2,7 @@
 
 This repo contains files and notes created for a lecture on [Jekyll](https://jekyllrb.com). The lecture is was held at [Frontend ZG Meetup](https://www.meetup.com/en-AU/FrontendZG/) on 2017/11/08.
 
-# Lecture notes
+# Let's dive into Jekyll
 
 In this chapter you can find notes I made while preparing for this lecture. The notes not only outline the lecture, but can also be used as an quick introduction guide to Jekyll.
 
@@ -194,7 +194,7 @@ In this step we will install a theme called `jekyll-theme-basically-basic` (from
 A theme is installed like so:
 
 ```bash
-gem install jekyll-theme-basically-basic
+sudo gem install jekyll-theme-basically-basic
 ```
 
 ### Applying the theme to our website
@@ -233,7 +233,7 @@ In this example we will create a GitHub page for GitHub repository of this proje
 
 ### Configuring GitHub pages
 
-Frst we need to configure our repository on GitHub pages:
+First we need to configure our repository on GitHub pages:
 
 * access the GitHub page fo your project
 * access the project **settings**
@@ -306,33 +306,57 @@ The end result will be that the page content is processed in the following seque
 
 After all of this is done, all we need to do is commit and push, and marvel at the beuty of our [new GitHub page](https://knee-cola.github.io/jekyll-meetup-lecture/)!
 
+# But that's not all
+
+If you managed to get this far in this text, it means that you really are interested in Jekyll.
+
+If that is the case, then I must tell you that in this lecture we only scratched surface of the subject.
+
+So here I would like to point out a few aspects of Jekyll I found interesting and usefull ...
+
+### Jekyll includes
+
+One feature I use a lot are [the includes](https://jekyllrb.com/docs/includes/). They allow us to inject a snippet from another HTML file into our HTML.
+
+Here's an example (taken from the Jekyll website):
+```
+{% include footer.html %}
+```
+
+### Data Files
+
+Another usefull feature are [data files](https://jekyllrb.com/docs/datafiles/). These work like a really text-file based database, which can be quieried via liquid and used to generate HTML.
+
+So a data file containg a list of members would look like this:
+```
+- name: Eric Mill
+  github: konklone
+
+- name: Parker Moore
+  github: parkr
+
+- name: Liu Fengyun
+  github: liufengyun
+```
+
+... which can then be used in our HTML like this:
+
+```html
+<ul>
+{% for member in site.data.members %}
+  <li>
+    <a href="https://github.com/{{ member.github }}">
+      {{ member.name }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+```
+
+### Official documentation
+
+Although pointing out that you should probably read the [official documentation](https://jekyllrb.com/docs/home/) sounds totaly ridiculous and unnecessary, I'll do it anyway - **READ IT** :)
+
 # You need help? Have questions?
 
 If you're starting out with Jekyll, get stuck (as expected) and need some help, don't hesitate to reach me. I'm no Jekyll expert, but am willing to try ;)
-
-# Research & Planning
-
-This chapter contains links to pages researched during preparation for this lecture
-
-## Subjects covered by the lecture
-* _layout - how make the source DRY
-* [_posts](https://jekyllrb.com/docs/posts/) - how the posts work
-* [liquid templates](https://jekyllrb.com/docs/templates/) - how to generate a menu & applying filters to transform data
-* [sass](https://jekyllrb.com/docs/assets/) - using the `_sass` folder for partials
-* [blog migration](https://jekyllrb.com/docs/migrations/) - just a mention that automatic migration is possible  
-
-## Subjects NOT covered in lecture
-* [code highliting](https://jekyllrb.com/docs/templates/#code-snippet-highlighting) - useful for developers ... not enough time
-* [_include](https://jekyllrb.com/docs/includes/) - how to insert content of other files ... not enough time
-* site.related_posts - showing related posts (last few) ... not enough time
-* [paginator](https://jekyllrb.com/docs/pagination/)** - not enough time
-* [data files](https://jekyllrb.com/docs/datafiles/) - too specific ... this is tips & tricks kind of a subject
-* [collections](https://jekyllrb.com/docs/collections/) - too advanced subject for an intorductory course
-* [links to pages](https://jekyllrb.com/docs/templates/#link) - usefull, but we can get away without it - more of a tips & tricks kind of subject
-* [include params & variables](https://jekyllrb.com/docs/includes/#passing-parameters-to-includes) - too advanced subject for an intorductory course
-* **docs page**
-  * [plugins](https://jekyllrb.com/docs/plugins/)
-  * [themes](https://jekyllrb.com/docs/themes/)
-  * [extras](https://jekyllrb.com/docs/extras/)
-* **tutorials page**
-  * [navigation](https://jekyllrb.com/tutorials/navigation/) - describes how to implement an effective navigation
