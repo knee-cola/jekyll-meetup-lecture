@@ -13,7 +13,7 @@ This lecture is organized into three consecutive parts:
 * [(2) Using themes](#2-using-themes)
 * [(3) Creating a GitHub page](#3-creating-a-github-page)
 
-There's one extra chapter called [Going beyond basics](#going-beyond-basics), which talks about subjects not covered by the lecture.
+There's one extra chapter called [Going beyond basics](#going-beyond-basics), which talks about subjects not covered in the lecture.
 
 ## Files in this repo
 
