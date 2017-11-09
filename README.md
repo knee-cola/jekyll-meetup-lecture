@@ -18,6 +18,7 @@ To help you understand how each of the concepts described in this text works, so
 * `3-markdown` - converting our pages from HTML to markdown
 * `4-using-themes` - applying other themes to our content
 * `5-github-pages` - preparing out website to be published on GitHub
+* `docs` - the published version of the demo website
 
 You might want to have a look at presentation used in the lecture: [Jekyll the WP Killer - ZG Frontman Meetup](https://goo.gl/ZrcyXU)
 
